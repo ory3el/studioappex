@@ -44,7 +44,6 @@ const FAQ = [
 const $ = (s, el = document) => [...el.querySelectorAll(s)];
 const $1 = (s, el = document) => el.querySelector(s);
 const make = (tag, text, cls) => { const e = document.createElement(tag); if (text) e.textContent = text; if (cls) e.className = cls; return e; };
-document.documentElement.classList.add("js");
 
 /* ===== Contatos e marca ===== */
 const waReady = /^\d{12,13}$/.test(CONFIG.whatsapp) && !/^\d{2}0{9,}/.test(CONFIG.whatsapp) && !/^550{2}/.test(CONFIG.whatsapp);
@@ -64,6 +63,7 @@ const setMenu = open => {
   menu.classList.toggle("open", open);
   burger.setAttribute("aria-expanded", open);
   burger.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+  if (open && window.AppexMotion) AppexMotion.menu();
 };
 burger.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
 menu.addEventListener("click", e => { if (e.target.closest("a")) setMenu(false); });
@@ -104,7 +104,7 @@ FAQ.forEach(([q, a], i) => {
   b.setAttribute("aria-expanded", "false"); b.setAttribute("aria-controls", "p" + i);
   const p = make("div", a, "pn"); p.id = "p" + i; p.hidden = true;
   p.setAttribute("role", "region"); p.setAttribute("aria-labelledby", b.id);
-  b.addEventListener("click", () => { const o = b.getAttribute("aria-expanded") === "true"; b.setAttribute("aria-expanded", !o); p.hidden = o; });
+  b.addEventListener("click", () => { const o = b.getAttribute("aria-expanded") === "true"; b.setAttribute("aria-expanded", !o); if (window.AppexMotion) AppexMotion.panel(p, o); else p.hidden = o; });
   acc.append(b, p);
 });
 acc.addEventListener("keydown", e => {
@@ -143,9 +143,3 @@ form.addEventListener("submit", e => {
   status.className = "fnote";
   window.open(waLink(text), "_blank", "noopener");
 });
-
-/* ===== Entrada suave das seções ===== */
-if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } }), { threshold: .12 });
-  $("main section:not(.hero) .wrap > *, .strip li").forEach(el => { el.dataset.r = ""; io.observe(el); });
-}
