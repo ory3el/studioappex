@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Criação de sites institucionais e landing pages | Studio Appex</title>
-<meta name="description" content="Estúdio de web design e desenvolvimento. Criamos sites institucionais, landing pages e sites personalizados, responsivos e rápidos, para pequenas e médias empresas.">
+<title>Sites institucionais e landing pages sob medida | Studio Appex</title>
+<meta name="description" content="Studio Appex: estúdio de web design e desenvolvimento. Sites institucionais, landing pages e projetos personalizados, responsivos e rápidos, para pequenas e médias empresas.">
 <meta name="theme-color" content="#3A4DFF">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Studio Appex | Web design e desenvolvimento">
-<meta property="og:description" content="Sites institucionais e landing pages feitos sob medida para o seu negócio.">
+<meta property="og:description" content="Sites institucionais, landing pages e projetos personalizados feitos sob medida para o seu negócio.">
 <meta property="og:locale" content="pt_BR">
-<!-- Ao publicar: adicione <link rel="canonical" href="https://seudominio.com.br/"> e og:image -->
+<!-- Ao publicar: adicione <link rel="canonical"> com o domínio real e og:image -->
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,25 +22,25 @@
 <a class="skip" href="#sobre">Pular para o conteúdo</a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-site" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 9h18"/></symbol>
+  <symbol id="i-site" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 9h18M7 14h5"/></symbol>
   <symbol id="i-lp" viewBox="0 0 24 24"><path d="M4 4h16v6H4zM4 14h9M4 18h6M16 14h4v6h-4z"/></symbol>
-  <symbol id="i-page" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM9 12h7M9 16h7"/></symbol>
   <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></symbol>
   <symbol id="i-speed" viewBox="0 0 24 24"><path d="M4 17a8 8 0 1 1 16 0M12 17l4-6"/></symbol>
   <symbol id="i-care" viewBox="0 0 24 24"><path d="m14 6 4 4-9 9H5v-4zM12 8l4 4"/></symbol>
+  <symbol id="i-resp" viewBox="0 0 24 24"><path d="M3 6h12v10H3zM17 9h4v9h-4zM6 19h6"/></symbol>
 </svg>
 
-<header class="site-header">
+<template id="t-aurora"><div class="mk a"><div class="mn"><b>Aurora</b><span>Especialidades</span><span>Equipe</span><i>Agendar</i></div><div class="hd"><h4>Cuidado que acompanha cada fase</h4><p>Fisioterapia e bem-estar em um só lugar.</p><u>Agendar consulta</u></div><div class="bl"></div><div class="ch"><span>Fisioterapia</span><span>Pilates clínico</span><span>Nutrição</span></div></div></template>
+<template id="t-vento"><div class="mk v"><div class="mn"><b>Vento</b><span>Coleção</span><span>Ateliê</span><i>Pedir</i></div><div class="hd"><h4>Vento</h4><p>Cerâmica feita à mão, em pequenas séries.</p><u>Fazer um pedido</u></div><div class="pr"><span>Prato</span><span>Jarro</span><span>Xícara</span><span>Vaso</span></div></div></template>
+<template id="t-prumo"><div class="mk p"><div class="mn"><b>Prumo</b><span>Serviços</span><span>Projetos</span><i>Contato</i></div><div class="hd"><h4>Engenharia com método, do projeto à obra.</h4><p>Planejamento, execução e acompanhamento.</p><u>Falar com o comercial</u></div><div class="bl"></div><div class="ch"><span>Projetos</span><span>Obras</span><span>Consultoria</span></div></div></template>
+
+<header class="site-header" id="top">
   <div class="wrap bar">
-    <a class="logo" href="#inicio"><span class="mark" aria-hidden="true"></span><span data-brand>Studio Appex</span></a>
+    <a class="logo" href="#inicio" aria-label="Studio Appex, início"><span class="mark" aria-hidden="true"></span><span data-brand>Studio Appex</span></a>
     <nav id="menu" class="nav" aria-label="Principal">
-      <a href="#inicio">Início</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#processo">Processo</a>
-      <a href="#portfolio">Portfólio</a>
-      <a href="#contato">Contato</a>
+      <a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#portfolio">Portfólio</a><a href="#processo">Processo</a><a href="#faq">Perguntas</a><a href="#contato">Contato</a>
     </nav>
-    <a class="btn btn-sm" data-wa href="#contato">Solicitar orçamento</a>
+    <a class="btn btn-sm" href="#contato"><span class="long">Solicitar </span>orçamento</a>
     <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span></button>
   </div>
 </header>
@@ -49,73 +49,81 @@
   <section id="inicio" class="hero">
     <div class="wrap hero-in">
       <div class="hero-copy">
-        <div class="frame"><span class="tag">h1</span>
-          <h1>Um site que diz o que você faz antes de o cliente perguntar.</h1>
-        </div>
-        <p class="lead">Projetamos e desenvolvemos sites institucionais e landing pages sob medida. Design, código e estrutura pensados para o seu negócio e para quem vai visitá-lo.</p>
+        <h1>Um site que diz o que você faz antes de o cliente perguntar.</h1>
+        <p class="lead">O Studio Appex projeta e desenvolve sites institucionais, landing pages e projetos personalizados para pequenas e médias empresas. Cada layout nasce do seu negócio, com código leve e feito para funcionar em qualquer tela.</p>
         <div class="actions">
-          <a class="btn" data-wa href="#contato">Solicitar orçamento</a>
-          <a class="btn btn-ghost" href="#servicos">Conhecer os serviços</a>
+          <a class="btn" href="#contato">Solicitar orçamento</a>
+          <a class="btn btn-ghost" href="#portfolio">Ver projetos</a>
         </div>
+        <p class="hint">Sites institucionais · Landing pages · Projetos personalizados</p>
       </div>
-      <div class="art" aria-hidden="true">
-        <div class="browser">
-          <div class="chrome"><i></i><i></i><i></i><span>seunegocio.com.br</span></div>
-          <div class="skel">
-            <b class="nv" style="--c:#14172B;--d:.2s"></b>
-            <b class="t1" style="--c:#14172B;--d:.5s"></b>
-            <b class="t2" style="--c:#14172B;--d:.7s"></b>
-            <b class="p1" style="--c:#C9CDE0;--d:.9s"></b>
-            <b class="bt" style="--c:#3A4DFF;--d:1.1s"></b>
-            <b class="im" style="--c:#FFC93C;--d:1.3s"></b>
-            <b class="c1" style="--c:#1B2370;--d:1.5s"></b>
-            <b class="c2" style="--c:#C9CDE0;--d:1.6s"></b>
-          </div>
-        </div>
-        <div class="phone"><div class="skel">
-          <b class="nv" style="--c:#14172B;--d:1.7s"></b>
-          <b class="t1" style="--c:#3A4DFF;--d:1.9s"></b>
-          <b class="im" style="--c:#C9CDE0;--d:2.1s"></b>
-        </div></div>
+      <div class="stage" aria-hidden="true">
+        <div class="browser"><div class="chrome"><i></i><i></i><i></i><span>clinicaaurora.com.br</span></div><div data-mock="aurora"></div></div>
+        <div class="phone"><div class="mk v m"><div class="hd"><h4>Vento</h4><p>Cerâmica feita à mão.</p><u>Fazer pedido</u></div><div class="pr"><span>Prato</span><span>Jarro</span></div></div></div>
+        <span class="demo">Conceitos demonstrativos</span>
       </div>
     </div>
   </section>
 
   <section id="sobre" class="about">
-    <div class="wrap two">
-      <div>
-        <h2>Cada projeto começa pelo seu negócio, não por um template.</h2>
-        <p>Antes de desenhar qualquer tela, entendemos quem você atende, o que vende e o que o visitante precisa encontrar. Só depois o design e o código entram em cena, para refletir a identidade e os objetivos de cada cliente.</p>
+    <div class="wrap">
+      <div class="two">
+        <div>
+          <h2>Cada projeto começa pelo seu negócio, não por um template.</h2>
+          <p>Antes de desenhar qualquer tela, entendemos quem você atende, o que vende e o que o visitante precisa encontrar. Só depois o design e o código entram em cena.</p>
+          <p>O resultado é um site com a identidade do seu negócio, organizado para que o visitante entenda a proposta e saiba como entrar em contato.</p>
+        </div>
+        <dl class="pillars">
+          <div><dt>Design personalizado</dt><dd>Cores, tipografia e composição que reforçam a sua marca.</dd></div>
+          <div><dt>Desenvolvimento organizado</dt><dd>Código limpo, fácil de manter e de evoluir.</dd></div>
+          <div><dt>Experiência do usuário</dt><dd>Navegação clara, com o caminho até o contato sempre à vista.</dd></div>
+          <div><dt>Responsividade</dt><dd>Layouts pensados para celular, tablet e computador.</dd></div>
+          <div><dt>Desempenho</dt><dd>Páginas leves, sem bibliotecas desnecessárias.</dd></div>
+        </dl>
       </div>
-      <dl class="pillars">
-        <div><dt>Design e identidade visual</dt><dd>Cores, tipografia e composição que reforçam a sua marca.</dd></div>
-        <div><dt>Tecnologia e desenvolvimento</dt><dd>Código limpo, organizado e fácil de manter.</dd></div>
-        <div><dt>Experiência do usuário</dt><dd>Navegação clara, com o caminho até o contato sempre visível.</dd></div>
-        <div><dt>Desempenho e responsividade</dt><dd>Páginas leves, que funcionam bem em celular, tablet e computador.</dd></div>
-      </dl>
+      <ul class="strip">
+        <li>Sites feitos sob medida</li><li>HTML, CSS e JavaScript, sem frameworks</li><li>Orçamento personalizado</li><li>Responsivo em qualquer tela</li>
+      </ul>
     </div>
   </section>
 
   <section id="servicos" class="services">
     <div class="wrap">
       <h2>O que construímos</h2>
-      <div class="cards">
-        <article class="card feat"><svg><use href="#i-site"/></svg><h3>Sites institucionais</h3><p>Presença completa para apresentar sua empresa, seus serviços e seus diferenciais com clareza.</p><p class="gain">Para você: clientes que entendem quem você é antes do primeiro contato.</p></article>
-        <article class="card feat"><svg><use href="#i-lp"/></svg><h3>Landing pages</h3><p>Uma página focada em uma única ação: pedir orçamento, agendar ou chamar no WhatsApp.</p><p class="gain">Para você: cada visita aponta para um próximo passo.</p></article>
-        <article class="card"><svg><use href="#i-page"/></svg><h3>Páginas de apresentação</h3><p>Páginas para apresentar serviços, produtos ou a própria empresa.</p><p class="gain">Para você: informação organizada e fácil de compartilhar.</p></article>
-        <article class="card"><svg><use href="#i-code"/></svg><h3>Sites personalizados</h3><p>Layout e recursos pensados para o seu caso, sem partir de um modelo pronto.</p><p class="gain">Para você: um site com a cara do seu negócio.</p></article>
-        <article class="card"><svg><use href="#i-speed"/></svg><h3>Desempenho e responsividade</h3><p>Ajustes para carregar rápido e funcionar bem em qualquer tela.</p><p class="gain">Para você: navegação confortável para quem visita.</p></article>
-        <article class="card"><svg><use href="#i-care"/></svg><h3>Manutenção e suporte</h3><p>Atualizações de conteúdo, correções e acompanhamento depois da publicação.</p><p class="gain">Para você: alguém cuidando do site com você.</p></article>
+      <div class="cards3">
+        <article class="card"><svg><use href="#i-site"/></svg><h3>Sites institucionais</h3><p class="for">Para empresas que precisam apresentar marca, serviços, equipe e informações comerciais.</p><p>Várias páginas organizadas, com a identidade do negócio e contato em evidência.</p><p class="gain">Seus clientes entendem quem você é antes do primeiro contato.</p><a href="#contato" data-type="Site institucional">Pedir orçamento</a></article>
+        <article class="card"><svg><use href="#i-lp"/></svg><h3>Landing pages</h3><p class="for">Para campanhas, divulgação de produtos ou serviços e geração de contatos.</p><p>Uma página com um único objetivo: levar o visitante a pedir orçamento ou chamar no WhatsApp.</p><p class="gain">Cada visita aponta para um próximo passo claro.</p><a href="#contato" data-type="Landing page">Pedir orçamento</a></article>
+        <article class="card"><svg><use href="#i-code"/></svg><h3>Projetos personalizados</h3><p class="for">Para empresas que precisam de funcionalidades específicas ou de uma interface própria.</p><p>Interface e recursos desenvolvidos conforme a necessidade do seu negócio.</p><p class="gain">Um site que se adapta ao seu processo, e não o contrário.</p><a href="#contato" data-type="Projeto personalizado">Pedir orçamento</a></article>
+      </div>
+      <ul class="extras" aria-label="Serviços complementares">
+        <li><svg><use href="#i-care"/></svg><b>Manutenção e suporte</b> Atualizações e correções depois da publicação.</li>
+        <li><svg><use href="#i-speed"/></svg><b>Desempenho e otimização</b> Ajustes para o site carregar bem.</li>
+        <li><svg><use href="#i-resp"/></svg><b>Responsividade</b> Adaptação a celulares, tablets e computadores.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="portfolio" class="work">
+    <div class="wrap">
+      <h2>Portfólio de conceitos</h2>
+      <p class="note">Os três projetos abaixo são <strong>conceitos fictícios</strong>, criados pelo Studio Appex para demonstrar possibilidades. Não são trabalhos feitos para clientes reais. Projetos reais entram aqui quando forem publicados.</p>
+      <div class="projects">
+        <article class="pj pa"><div class="fig" data-project="aurora"><div class="browser"><div class="chrome"><i></i><i></i><i></i></div><div data-mock="aurora"></div></div></div>
+          <div class="pi"><span class="chip">Projeto demonstrativo fictício</span><h3>Clínica Aurora</h3><p class="cat">Site institucional</p><p>Identidade de clínica moderna, com especialidades, equipe e agendamento em destaque.</p><ul class="tags"><li>Paleta suave</li><li>Foco em agendamento</li><li>Equipe e especialidades</li></ul><button class="link" data-project="aurora">Ver detalhes do conceito</button></div></article>
+        <article class="pj pv"><div class="fig" data-project="vento"><div class="browser"><div class="chrome"><i></i><i></i><i></i></div><div data-mock="vento"></div></div></div>
+          <div class="pi"><span class="chip">Projeto demonstrativo fictício</span><h3>Ateliê Vento</h3><p class="cat">Landing page</p><p>Página editorial de uma marca criativa, com tipografia expressiva e pedidos pelo WhatsApp.</p><ul class="tags"><li>Tipografia expressiva</li><li>Vitrine de produtos</li></ul><button class="link" data-project="vento">Ver detalhes do conceito</button></div></article>
+        <article class="pj pp"><div class="fig" data-project="prumo"><div class="browser"><div class="chrome"><i></i><i></i><i></i></div><div data-mock="prumo"></div></div></div>
+          <div class="pi"><span class="chip">Projeto demonstrativo fictício</span><h3>Prumo Engenharia</h3><p class="cat">Site institucional corporativo</p><p>Visual corporativo e sóbrio, com serviços, segmentos de atuação e contato comercial em evidência.</p><ul class="tags"><li>Visual corporativo</li><li>Serviços e segmentos</li><li>Contato comercial</li></ul><button class="link" data-project="prumo">Ver detalhes do conceito</button></div></article>
       </div>
     </div>
   </section>
 
   <section id="processo" class="process">
     <div class="wrap">
-      <h2>Como funciona, do primeiro contato à publicação</h2>
+      <h2>Do primeiro contato à publicação</h2>
       <ol class="steps">
         <li><span>1</span><h3>Conversa inicial</h3><p>Entendemos o seu negócio, o público e o que o site precisa resolver.</p></li>
-        <li><span>2</span><h3>Planejamento</h3><p>Definimos estrutura, conteúdo e objetivos antes de começar a desenhar.</p></li>
+        <li><span>2</span><h3>Planejamento</h3><p>Definimos estrutura, conteúdo e objetivos antes de desenhar.</p></li>
         <li><span>3</span><h3>Design e desenvolvimento</h3><p>Construímos o site com a identidade do seu negócio.</p></li>
         <li><span>4</span><h3>Revisão</h3><p>Você vê o projeto e fazemos os ajustes combinados.</p></li>
         <li><span>5</span><h3>Publicação</h3><p>Entregamos o site pronto para uso, online.</p></li>
@@ -123,33 +131,59 @@
     </div>
   </section>
 
-  <section id="portfolio" class="work">
+  <section id="formatos" class="pick">
     <div class="wrap">
-      <h2>Portfólio</h2>
-      <p class="note">Os projetos abaixo são conceitos fictícios, criados para demonstrar possibilidades. Projetos reais entram aqui conforme forem publicados.</p>
-      <div id="projects" class="projects"></div>
+      <h2>Qual formato combina com o seu negócio?</h2>
+      <p class="note">Ainda não sabe o que contratar? Veja por onde começar. Se continuar com dúvida, descreva sua situação no formulário e indicamos o caminho.</p>
+      <div class="rows2">
+        <div><h3>Quero captar contatos para uma oferta</h3><p>Indicado para divulgar um produto ou serviço e receber pedidos de orçamento.</p><b>Landing page</b><a class="btn btn-ghost" href="#contato" data-type="Landing page">Orçar landing page</a></div>
+        <div><h3>Preciso apresentar minha empresa por inteiro</h3><p>Indicado para mostrar marca, serviços, equipe e informações comerciais em um só lugar.</p><b>Site institucional</b><a class="btn btn-ghost" href="#contato" data-type="Site institucional">Orçar site institucional</a></div>
+        <div><h3>Tenho uma necessidade específica</h3><p>Indicado quando o modelo comum não atende: funcionalidades ou interface próprias.</p><b>Projeto personalizado</b><a class="btn btn-ghost" href="#contato" data-type="Projeto personalizado">Orçar projeto personalizado</a></div>
+      </div>
     </div>
   </section>
 
   <section id="diferenciais" class="diff">
-    <div class="wrap">
-      <h2>Como trabalhamos</h2>
-      <dl class="rows">
-        <div><dt>Projetos personalizados</dt><dd>Nada de modelo reaproveitado: estrutura e visual nascem do seu negócio.</dd></div>
-        <div><dt>Design responsivo</dt><dd>O layout se adapta a celulares, tablets e computadores.</dd></div>
-        <div><dt>Navegação intuitiva</dt><dd>O visitante encontra o que procura sem esforço.</dd></div>
-        <div><dt>Atenção ao desempenho</dt><dd>Código enxuto e imagens otimizadas para o site carregar bem.</dd></div>
-        <div><dt>Organização e clareza</dt><dd>Etapas definidas e comunicação objetiva durante todo o projeto.</dd></div>
-        <div><dt>Alinhado ao seu negócio</dt><dd>Cada decisão de design e de desenvolvimento parte dos seus objetivos.</dd></div>
-      </dl>
+    <div class="wrap two">
+      <div><h2>Como trabalhamos</h2><p class="note">Princípios que orientam cada projeto, da conversa inicial à entrega.</p></div>
+      <ul class="dlist">
+        <li><b>Projetos personalizados</b> Estrutura e visual nascem do seu negócio.</li>
+        <li><b>Design responsivo</b> O layout se adapta a cada tamanho de tela.</li>
+        <li><b>Navegação intuitiva</b> O visitante encontra o que procura sem esforço.</li>
+        <li><b>Desempenho</b> Código enxuto e imagens otimizadas.</li>
+        <li><b>Código organizado</b> Fácil de entender, manter e evoluir.</li>
+        <li><b>Comunicação objetiva</b> Etapas claras e retorno direto durante o projeto.</li>
+        <li><b>Alinhado aos objetivos</b> Cada decisão parte do que o seu negócio precisa.</li>
+      </ul>
+    </div>
+    <!-- Depoimentos: adicione aqui somente avaliações reais e autorizadas por clientes. -->
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="wrap two">
+      <h2>Perguntas frequentes</h2>
+      <div class="acc" id="acc"></div>
     </div>
   </section>
 
-  <section id="contato" class="cta">
-    <div class="wrap">
-      <h2>Tem um projeto em mente? Vamos conversar.</h2>
-      <p>Conte rapidamente o que você faz e o que precisa. Respondemos pelo WhatsApp e, juntos, definimos o melhor caminho.</p>
-      <a class="btn btn-sun" data-wa href="#contato">Chamar no WhatsApp</a>
+  <section id="contato" class="contact">
+    <div class="wrap two">
+      <div class="c-copy">
+        <h2>Tem um projeto em mente? Vamos conversar.</h2>
+        <p>Conte o que você faz e o que precisa. Ao continuar, abrimos o WhatsApp com a sua mensagem pronta, e a conversa segue por lá.</p>
+        <a class="btn btn-sun" data-wa href="#contato">Chamar no WhatsApp</a>
+        <ul class="cinfo"><li><a data-mail href="#contato">E-mail</a></li><li><a data-ig href="#contato" target="_blank" rel="noopener">Instagram</a></li><li data-region></li></ul>
+      </div>
+      <form id="form" class="form" novalidate>
+        <h3>Solicitar orçamento</h3>
+        <label>Nome<input name="nome" autocomplete="name" required aria-describedby="e-nome"><small class="err" id="e-nome"></small></label>
+        <label>Empresa <span>(opcional)</span><input name="empresa" autocomplete="organization"></label>
+        <label>E-mail ou WhatsApp<input name="contato" autocomplete="email" required aria-describedby="e-contato"><small class="err" id="e-contato"></small></label>
+        <label>Tipo de projeto<select name="tipo" required aria-describedby="e-tipo"><option value="">Selecione</option><option>Site institucional</option><option>Landing page</option><option>Projeto personalizado</option><option>Ainda não sei</option></select><small class="err" id="e-tipo"></small></label>
+        <label>Conte sobre o projeto<textarea name="desc" rows="4" required aria-describedby="e-desc"></textarea><small class="err" id="e-desc"></small></label>
+        <button class="btn" type="submit">Continuar no WhatsApp</button>
+        <p class="fnote" id="fstatus" role="status">O WhatsApp abrirá com a mensagem preenchida. Confirme o envio por lá.</p>
+      </form>
     </div>
   </section>
 </main>
@@ -157,17 +191,16 @@
 <footer class="foot">
   <div class="wrap foot-in">
     <div><strong data-brand>Studio Appex</strong><p>Web design e desenvolvimento para pequenas e médias empresas.</p></div>
-    <div><h3>Contato</h3>
-      <a data-wa href="#contato">WhatsApp</a>
-      <a data-mail href="#contato">E-mail</a>
-      <a data-ig href="#contato" target="_blank" rel="noopener">Instagram</a>
-      <p data-region></p>
-    </div>
-    <nav aria-label="Rodapé"><h3>Navegação</h3>
-      <a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#processo">Processo</a><a href="#portfolio">Portfólio</a><a href="#contato">Contato</a>
-    </nav>
+    <div><h3>Contato</h3><a data-wa href="#contato">WhatsApp</a><a data-mail href="#contato">E-mail</a><a data-ig href="#contato" target="_blank" rel="noopener">Instagram</a><p data-region></p></div>
+    <nav aria-label="Rodapé"><h3>Navegação</h3><a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#portfolio">Portfólio</a><a href="#processo">Processo</a><a href="#faq">Perguntas</a><a href="#contato">Contato</a></nav>
   </div>
   <p class="wrap copy">© <span id="year">2026</span> <span data-brand>Studio Appex</span>. Todos os direitos reservados.</p>
 </footer>
+
+<dialog id="dlg" aria-labelledby="dt">
+  <button class="x" aria-label="Fechar detalhes">Fechar</button>
+  <div class="dm"><div class="browser"><div class="chrome"><i></i><i></i><i></i></div><div id="dmock"></div></div></div>
+  <div class="dc"><span class="chip">Projeto demonstrativo fictício</span><h3 id="dt"></h3><p class="cat" id="dcat"></p><dl id="dbody"></dl><a class="btn" href="#contato" id="dcta">Quero um site assim</a></div>
+</dialog>
 </body>
 </html>
