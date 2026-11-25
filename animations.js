@@ -93,7 +93,7 @@
         }
       });
       if (hov) $$(".card").forEach(c => {
-        on(c, "pointerenter", () => gsap.to(c, { y: -4, duration: .35, ease: "power2.out" }));
+        on(c, "pointerenter", () => gsap.to(c, { y: -2, duration: .35, ease: "power2.out" }));
         on(c, "pointerleave", () => gsap.to(c, { y: 0, duration: .4, ease: "power2.out" }));
       });
 
